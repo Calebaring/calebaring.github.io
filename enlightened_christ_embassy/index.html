@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enlightened Christ Embassy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="no-scroll">
+
+<nav>
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="ministries.html">Ministries</a>
+  <a href="events.html">Events</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="slider">
+  <div class="arrow prev" onclick="prevSlide()">❮</div>
+  <div class="arrow next" onclick="nextSlide()">❯</div>
+  <div class="slides" id="slides">
+    <div class="slide">
+      <img src="images/slide1.jpg.jpg" alt="Slide 1" />
+      <div class="caption">Ministering the Word with Power</div>
+    </div>
+    <div class="slide">
+      <img src="images/slide2.jpg.jpg" alt="Slide 2" />
+      <div class="caption">A Worshiping and Growing Community</div>
+      <div class="slide">
+        <img src="images/slide3.jpg.jpg" alt="Slide 3" />
+        <div class="caption">An annointed alter of God</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.getElementById("slides");
+  const totalSlides = slides.children.length;
+
+  function showSlide(index) {
+    currentSlide = (index + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(-${currentSlide * 100}vw)`;
+  }
+
+  function nextSlide() {
+    showSlide(currentSlide +  1);
+  }
+
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  setInterval(nextSlide, 8000);
+</script>
+
+</body>
+</html>
